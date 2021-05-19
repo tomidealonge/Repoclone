@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/app.css" type="text/css" />
+    <title>Your Repositories</title>
+</head>
+
+<body>
+    <div class="screen">
+        <header></header>
+        <nav>
+            <ul class="inner-nav">
+                <li class="inner-nav-item">
+                    <div class="inner-nav-icon"></div>
+                    <div>Overview</div>
+                </li>
+                <li class="inner-nav-item">
+                    <div class="inner-nav-icon"></div>
+                    <div>Repositories</div>
+                </li>
+                <li class="inner-nav-item">
+                    <div class="inner-nav-icon"></div>
+                    <div>Products</div>
+                </li>
+                <li class="inner-nav-item">
+                    <div class="inner-nav-icon"></div>
+                    <div>Packages</div>
+                </li>
+            </ul>
+        </nav>
+        <section>
+            <aside>
+                <div class="profile-img-wrapper">
+                    <div class="profile-img">
+                        <div class="profile-status"></div>
+                    </div>
+                    <div class="profile-name">
+                        <h1>Alonge Akintomide</h1>
+                        <h1 class="handle">tomidealonge</h1>
+                    </div>
+                </div>
+                <button>Edit Profile</button>
+                <div class="stats-flex">
+                    <div class="stats-flex-inner">
+                        <div class="stats-icon"></div>
+                        <div class="stats-number"></div>
+                        <div>followers</div>
+                    </div>
+                    <div class="stats-divider">.</div>
+                    <div class="stats-flex-inner">
+                        <div class="stats-icon"></div>
+                        <div class="stats-number"></div>
+                        <div>following</div>
+                    </div>
+                    <div class="stats-divider">.</div>
+                    <div class="stats-flex-inner">
+                        <div class="stats-icon"></div>
+                        <div class="stats-number"></div>
+                    </div>
+                </div>
+                <div class="organiation">
+                    <p>Organiation</p>
+                    <div class="organisations-flex">
+                        <div class="organisation"></div>
+                        <div class="organisation"></div>
+                        <div class="organisation"></div>
+                    </div>
+                </div>
+            </aside>
+            <main>
+                <div class="repo-filters-flex">
+                    <div class="repo-filter-inner-flex">
+                        <input type="text" class="text-input" placeholder="Find a repository...">
+                        <div class="filters-btn-flex">
+                            <div class="filter">
+                                <button>
+                                    <div>Type</div>
+                                    <div class="filter-btn-icon"></div>
+                                </button>
+                                <div class="filter-options-wrapper">
+                                    <div class="filters-inner">
+                                        <div class="filter-heading-flex">
+                                            <div>Select Type</div>
+                                            <div class="cancel-icon"></div>
+                                        </div>
+                                        <ul class="filters">
+                                            <li class="filter">
+                                                <div class="filter-active-icon active"></div>
+                                                <div>All</div>
+                                            </li>
+                                            <li class="filter">
+                                                <div class="filter-active-icon"></div>
+                                                <div>Public</div>
+                                            </li>
+                                            <li class="filter">
+                                                <div class="filter-active-icon"></div>
+                                                <div>Private</div>
+                                            </li>
+                                            <li class="filter">
+                                                <div class="filter-active-icon"></div>
+                                                <div>Sources</div>
+                                            </li>
+                                            <li class="filter">
+                                                <div class="filter-active-icon"></div>
+                                                <div>Forks</div>
+                                            </li>
+                                            <li class="filter">
+                                                <div class="filter-active-icon"></div>
+                                                <div>Archived</div>
+                                            </li>
+                                            <li class="filter">
+                                                <div class="filter-active-icon"></div>
+                                                <div>Mirrors</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter">
+                                <button>
+                                    <div>Language</div>
+                                    <div class="filter-btn-icon"></div>
+                                </button>
+                                <div class="filter-options-wrapper">
+                                    <div class="filters-inner">
+                                        <div class="filter-heading-flex">
+                                            <div>Select Language</div>
+                                            <div class="cancel-icon"></div>
+                                        </div>
+                                        <ul class="filters">
+                                            <li class="filter">
+                                                <div class="filter-active-icon active"></div>
+                                                <div>All</div>
+                                            </li>
+                                            <li class="filter">
+                                                <div class="filter-active-icon"></div>
+                                                <div>Vue</div>
+                                            </li>
+                                            <li class="filter">
+                                                <div class="filter-active-icon"></div>
+                                                <div>CSS</div>
+                                            </li>
+                                            <li class="filter">
+                                                <div class="filter-active-icon"></div>
+                                                <div>Javascript</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="filter">
+                                <button>
+                                    <div>Sort</div>
+                                    <div class="filter-btn-icon"></div>
+                                </button>
+                                <div class="filter-options-wrapper">
+                                    <div class="filters-inner">
+                                        <div class="filter-heading-flex">
+                                            <div>Select Order</div>
+                                            <div class="cancel-icon"></div>
+                                        </div>
+                                        <ul class="filters">
+                                            <li class="filter">
+                                                <div class="filter-active-icon active"></div>
+                                                <div>Last updated</div>
+                                            </li>
+                                            <li class="filter">
+                                                <div class="filter-active-icon"></div>
+                                                <div>Stars</div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button>
+                        <div class="new-icon"></div>
+                        <div>New</div>
+                    </button>
+                </div>
+                <div class="repo-desc-flex">
+                    <div class="repo-desc-block">
+                        <div class="repo-name-flex">
+                            <h3>Temlice</h3>
+                            <button class="repo-tag">Private</button>
+                        </div>
+                        <p class="small-paragraph">Lorem ipsum dolor sit amet consectetur.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur. amet</p>
+                        <div class="repo-stats-flex">
+                            <div class="stat-flex">
+                                <div class="stat-icon"></div>
+                                <p>MIT License</p>
+                            </div>
+                            <div class="stat-flex">
+                                <div class="stat-icon"></div>
+                                <p>MIT License</p>
+                            </div>
+                            <div class="stat-flex">
+                                <div class="stat-icon"></div>
+                                <p>MIT License</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="stars">
+                        <div class="star-icon"></div>
+                        <div>Star</div>
+                    </button>
+                </div>
+            </main>
+        </section>
+        <footer>
+            <ul class="footer">
+                <li class="footer-item">© 2021 GitHub, Inc</li>
+                <li class="footer-item">Terms</li>
+                <li class="footer-item">Privacy</li>
+                <li class="footer-item">Security</li>
+                <li class="footer-item">Status</li>
+                <li class="footer-item">Docs</li>
+            </ul>
+            <div class="footer-logo"></div>
+            <ul class="footer">
+                <li class="footer-item">Contact Github</li>
+                <li class="footer-item">Pricing</li>
+                <li class="footer-item">API</li>
+                <li class="footer-item">Training</li>
+                <li class="footer-item">Blog</li>
+                <li class="footer-item">About</li>
+            </ul>
+        </footer>
+    </div>
+    <script src="assets/app.js"></script>
+</body>
+
+</html>
