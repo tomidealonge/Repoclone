@@ -14,24 +14,24 @@
         <nav>
             <ul class="inner-nav">
                 <li class="inner-nav-item">
-                    <div class="inner-nav-icon"></div>
+                    <div class="icon inner-nav"></div>
                     <div>Overview</div>
                 </li>
                 <li class="inner-nav-item">
-                    <div class="inner-nav-icon"></div>
+                    <div class="icon inner-nav"></div>
                     <div>Repositories</div>
                 </li>
                 <li class="inner-nav-item">
-                    <div class="inner-nav-icon"></div>
+                    <div class="icon inner-nav"></div>
                     <div>Products</div>
                 </li>
                 <li class="inner-nav-item">
-                    <div class="inner-nav-icon"></div>
+                    <div class="icon inner-nav"></div>
                     <div>Packages</div>
                 </li>
             </ul>
         </nav>
-        <section>
+        <section class="container">
             <aside>
                 <div class="profile-img-wrapper">
                     <div class="profile-img">
@@ -45,19 +45,19 @@
                 <button>Edit Profile</button>
                 <div class="stats-flex">
                     <div class="stats-flex-inner">
-                        <div class="stats-icon"></div>
+                        <div class="icon stats"></div>
                         <div class="stats-number"></div>
                         <div>followers</div>
                     </div>
                     <div class="stats-divider">.</div>
                     <div class="stats-flex-inner">
-                        <div class="stats-icon"></div>
+                        <div class="icon stats"></div>
                         <div class="stats-number"></div>
                         <div>following</div>
                     </div>
                     <div class="stats-divider">.</div>
                     <div class="stats-flex-inner">
-                        <div class="stats-icon"></div>
+                        <div class="icon stats"></div>
                         <div class="stats-number"></div>
                     </div>
                 </div>
@@ -72,141 +72,182 @@
             </aside>
             <main>
                 <div class="repo-filters-flex">
+                    <button class="btn-new">
+                        <div class="icon new"></div>
+                        <div>New</div>
+                    </button>
                     <div class="repo-filter-inner-flex">
-                        <input type="text" class="text-input" placeholder="Find a repository...">
+                        <input type="text" class="text-input filters" placeholder="Find a repository...">
                         <div class="filters-btn-flex">
                             <div class="filter">
-                                <button>
-                                    <div>Type</div>
-                                    <div class="filter-btn-icon"></div>
-                                </button>
-                                <div class="filter-options-wrapper">
-                                    <div class="filters-inner">
-                                        <div class="filter-heading-flex">
-                                            <div>Select Type</div>
-                                            <div class="cancel-icon"></div>
+                                <details>
+                                    <summary>
+                                        <button>
+                                            <div>Type</div>
+                                            <div class="icon filter-btn"></div>
+                                        </button>
+                                    </summary>
+                                    <div class="filter-options-wrapper">
+                                        <div class="filters-inner">
+                                            <div class="filter-heading-flex">
+                                                <div>Select Type</div>
+                                                <div class="icon cancel"></div>
+                                            </div>
+                                            <ul class="filters">
+                                                <li class="filter">
+                                                    <div class="icon filter-active active"></div>
+                                                    <div>All</div>
+                                                </li>
+                                                <li class="filter">
+                                                    <div class="icon filter-active"></div>
+                                                    <div>Public</div>
+                                                </li>
+                                                <li class="filter">
+                                                    <div class="icon filter-active"></div>
+                                                    <div>Private</div>
+                                                </li>
+                                                <li class="filter">
+                                                    <div class="icon filter-active"></div>
+                                                    <div>Sources</div>
+                                                </li>
+                                                <li class="filter">
+                                                    <div class="icon filter-active"></div>
+                                                    <div>Forks</div>
+                                                </li>
+                                                <li class="filter">
+                                                    <div class="icon filter-active"></div>
+                                                    <div>Archived</div>
+                                                </li>
+                                                <li class="filter">
+                                                    <div class="icon filter-active"></div>
+                                                    <div>Mirrors</div>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <ul class="filters">
-                                            <li class="filter">
-                                                <div class="filter-active-icon active"></div>
-                                                <div>All</div>
-                                            </li>
-                                            <li class="filter">
-                                                <div class="filter-active-icon"></div>
-                                                <div>Public</div>
-                                            </li>
-                                            <li class="filter">
-                                                <div class="filter-active-icon"></div>
-                                                <div>Private</div>
-                                            </li>
-                                            <li class="filter">
-                                                <div class="filter-active-icon"></div>
-                                                <div>Sources</div>
-                                            </li>
-                                            <li class="filter">
-                                                <div class="filter-active-icon"></div>
-                                                <div>Forks</div>
-                                            </li>
-                                            <li class="filter">
-                                                <div class="filter-active-icon"></div>
-                                                <div>Archived</div>
-                                            </li>
-                                            <li class="filter">
-                                                <div class="filter-active-icon"></div>
-                                                <div>Mirrors</div>
-                                            </li>
-                                        </ul>
                                     </div>
-                                </div>
+                                </details>
                             </div>
                             <div class="filter">
-                                <button>
-                                    <div>Language</div>
-                                    <div class="filter-btn-icon"></div>
-                                </button>
-                                <div class="filter-options-wrapper">
-                                    <div class="filters-inner">
-                                        <div class="filter-heading-flex">
-                                            <div>Select Language</div>
-                                            <div class="cancel-icon"></div>
+                                <details>
+                                    <summary>
+                                        <button>
+                                            <div>Language</div>
+                                            <div class="icon filter-btn"></div>
+                                        </button>
+                                    </summary>
+                                    <div class="filter-options-wrapper">
+                                        <div class="filters-inner">
+                                            <div class="filter-heading-flex">
+                                                <div>Select Language</div>
+                                                <div class="icon cancel"></div>
+                                            </div>
+                                            <ul class="filters">
+                                                <li class="filter">
+                                                    <div class="icon filter-active active"></div>
+                                                    <div>All</div>
+                                                </li>
+                                                <li class="filter">
+                                                    <div class="icon filter-active"></div>
+                                                    <div>Vue</div>
+                                                </li>
+                                                <li class="filter">
+                                                    <div class="icon filter-active"></div>
+                                                    <div>CSS</div>
+                                                </li>
+                                                <li class="filter">
+                                                    <div class="icon filter-active"></div>
+                                                    <div>Javascript</div>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <ul class="filters">
-                                            <li class="filter">
-                                                <div class="filter-active-icon active"></div>
-                                                <div>All</div>
-                                            </li>
-                                            <li class="filter">
-                                                <div class="filter-active-icon"></div>
-                                                <div>Vue</div>
-                                            </li>
-                                            <li class="filter">
-                                                <div class="filter-active-icon"></div>
-                                                <div>CSS</div>
-                                            </li>
-                                            <li class="filter">
-                                                <div class="filter-active-icon"></div>
-                                                <div>Javascript</div>
-                                            </li>
-                                        </ul>
                                     </div>
-                                </div>
+                                </details>
                             </div>
                             <div class="filter">
-                                <button>
-                                    <div>Sort</div>
-                                    <div class="filter-btn-icon"></div>
-                                </button>
-                                <div class="filter-options-wrapper">
-                                    <div class="filters-inner">
-                                        <div class="filter-heading-flex">
-                                            <div>Select Order</div>
-                                            <div class="cancel-icon"></div>
+                                <details>
+                                    <summary>
+                                        <button>
+                                            <div>Sort</div>
+                                            <div class="icon filter-btn"></div>
+                                        </button>
+                                    </summary>
+                                    <div class="filter-options-wrapper">
+                                        <div class="filters-inner">
+                                            <div class="filter-heading-flex">
+                                                <div>Select Order</div>
+                                                <div class="icon cancel"></div>
+                                            </div>
+                                            <ul class="filters">
+                                                <li class="filter">
+                                                    <div class="icon filter-active active"></div>
+                                                    <div>Last updated</div>
+                                                </li>
+                                                <li class="filter">
+                                                    <div class="icon filter-active"></div>
+                                                    <div>Stars</div>
+                                                </li>
+                                            </ul>
                                         </div>
-                                        <ul class="filters">
-                                            <li class="filter">
-                                                <div class="filter-active-icon active"></div>
-                                                <div>Last updated</div>
-                                            </li>
-                                            <li class="filter">
-                                                <div class="filter-active-icon"></div>
-                                                <div>Stars</div>
-                                            </li>
-                                        </ul>
                                     </div>
-                                </div>
+                                </details>
+
                             </div>
                         </div>
                     </div>
-                    <button>
-                        <div class="new-icon"></div>
-                        <div>New</div>
-                    </button>
                 </div>
                 <div class="repo-desc-flex">
                     <div class="repo-desc-block">
                         <div class="repo-name-flex">
-                            <h3>Temlice</h3>
+                            <h2>Templice</h2>
                             <button class="repo-tag">Private</button>
                         </div>
-                        <p class="small-paragraph">Lorem ipsum dolor sit amet consectetur.</p>
+                        <p class="small">Lorem ipsum dolor sit amet consectetur.</p>
                         <p>Lorem ipsum dolor sit amet consectetur. amet</p>
                         <div class="repo-stats-flex">
                             <div class="stat-flex">
-                                <div class="stat-icon"></div>
+                                <div class="icon stat"></div>
                                 <p>MIT License</p>
                             </div>
                             <div class="stat-flex">
-                                <div class="stat-icon"></div>
+                                <div class="icon stat"></div>
                                 <p>MIT License</p>
                             </div>
                             <div class="stat-flex">
-                                <div class="stat-icon"></div>
+                                <div class="icon stat"></div>
                                 <p>MIT License</p>
                             </div>
                         </div>
                     </div>
                     <button class="stars">
-                        <div class="star-icon"></div>
+                        <div class="icon star"></div>
+                        <div>Star</div>
+                    </button>
+                </div>
+                <div class="repo-desc-flex">
+                    <div class="repo-desc-block">
+                        <div class="repo-name-flex">
+                            <h2>Templice</h2>
+                            <button class="repo-tag">Private</button>
+                        </div>
+                        <p class="small">Lorem ipsum dolor sit amet consectetur.</p>
+                        <p>Lorem ipsum dolor sit amet consectetur. amet</p>
+                        <div class="repo-stats-flex">
+                            <div class="stat-flex">
+                                <div class="icon stat"></div>
+                                <p>MIT License</p>
+                            </div>
+                            <div class="stat-flex">
+                                <div class="icon stat"></div>
+                                <p>MIT License</p>
+                            </div>
+                            <div class="stat-flex">
+                                <div class="icon stat"></div>
+                                <p>MIT License</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="stars">
+                        <div class="icon star"></div>
                         <div>Star</div>
                     </button>
                 </div>

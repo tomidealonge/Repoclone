@@ -1,4 +1,410 @@
 * {
-    background-color: red;
-    background-image: url('/assets/images/overview.svg');
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--body-text);
+}
+
+:root {
+    --primary-color: #0366d6;
+    --green-bg: #2ea44f;
+    --btn-text: #24292e;
+    --btn-bg: #fafbfc;
+    --btn-border: #E6E6E7;
+    --btn-shadow: #24292e;
+    --body-text: #586069;
+    --repo-border: #eaecef;
+    --input-border: #e1e4e8;
+    --input-text: #24292e;
+}
+
+details {
+    position: relative;
+}
+
+
+/* details>summary {
+    list-style: none;
+}
+
+details>summary::-webkit-details-marker {
+    display: none;
+} */
+
+.hide {
+    display: none;
+}
+
+ul {
+    padding: 0
+}
+
+ul>li {
+    list-style: none;
+    text-decoration: none;
+}
+
+h1 {
+    font-size: 26px;
+    line-height: 33px;
+    font-weight: 600;
+}
+
+h2 {
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 600;
+}
+
+p {
+    font-size: 14px;
+    line-height: 21px;
+    font-weight: 400;
+}
+
+p>.small {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+button {
+    font-family: 'Segoe UI', sans-serif;
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid;
+    border-radius: 6px;
+    box-sizing: border-box;
+    padding: 5px 16px;
+    background-color: var(--btn-bg);
+    color: var(--btn-text);
+    border: 1px solid var(--btn-border);
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+button.stars {
+    padding: 3px 12px;
+    font-size: 12px;
+    line-height: 20px;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    margin: 0px 5px;
+    background-image: url(https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+.repo-tag {
+    padding: 0 7px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 18px;
+    border-radius: 2em;
+    margin-left: 8px;
+    background-color: transparent;
+}
+
+.inner-nav {
+    font-size: 14px;
+    line-height: 20px;
+    font-weight: 500;
+}
+
+.filter-options-wrapper {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+footer {
+    font-size: 12px;
+    line-height: 18px;
+    font-weight: 500;
+}
+
+a {
+    -webkit-transition: all 500ms ease-in-out;
+    transition: all 500ms ease-in-out;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.blue-text {
+    color: var(--primary-color);
+}
+
+.container {
+    display: block
+}
+
+section {
+    width: 90%;
+    margin: 0 auto;
+    max-width: 1000px;
+}
+
+main {
+    flex-grow: 1;
+}
+
+
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Repo Filter Start &&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+.repo-filter-inner-flex {
+    margin-top: 20px;
+}
+
+.repo-filters-flex {
+    margin-bottom: 20px;
+}
+
+.repo-filter-inner-flex>input {
+    width: 100%;
+    font-family: 'Segoe UI', sans-serif;
+    padding: 5px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    color: var(--body-text);
+    border: 1px solid var(--input-border);
+    border-radius: 6px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.repo-filters-flex>button {
+    width: 100%;
+    background-color: var(--green-bg);
+    color: white;
+    font-weight: 700px;
+}
+
+.filters-btn-flex {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0px -5px;
+}
+
+.filters-btn-flex>* {
+    margin: 5px;
+}
+
+.filter-options-wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(141, 143, 145, 0.15);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    color: var(--btn-text);
+}
+
+.filters-inner {
+    background-color: white;
+    border-radius: 12px;
+    width: 90%;
+}
+
+.filter-heading-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 16px;
+}
+
+.filter>.icon {
+    margin-right: 10px;
+    margin-left: 0px;
+    opacity: 0;
+}
+
+.filter>.icon.active {
+    opacity: 1;
+}
+
+li.filter {
+    display: flex;
+    align-items: center;
+    padding: 16px;
+    border-top: 1px solid var(--repo-border);
+}
+
+li.filter:last-child {
+    border-bottom: none
+}
+
+.filter-options-wrapper.hide {
+    display: none;
+}
+
+@media (min-width: 500px) {
+    li.filter {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    .filter-options-wrapper {
+        position: absolute;
+        top: 40px;
+        bottom: auto;
+        width: 300px;
+        height: auto;
+        font-size: 12px;
+    }
+    .filters-inner {
+        background-color: white;
+        border-radius: 6px;
+        width: 100%;
+        box-shadow: 0 8px 24px rgba(149, 157, 165, 0.2);
+    }
+    .filter-heading-flex {
+        padding-top: 7px;
+        padding-bottom: 7px;
+    }
+    .filters-btn-flex {
+        flex-wrap: nowrap;
+    }
+}
+
+@media (min-width: 768px) {
+    .repo-filters-flex {
+        display: flex;
+        align-items: flex-start;
+    }
+    .repo-filter-inner-flex {
+        flex-shrink: 0;
+        flex-grow: 1;
+        margin-top: 0px;
+        margin-right: 20px;
+    }
+    .btn-new {
+        order: 2;
+        width: 100px;
+    }
+}
+
+@media (min-width: 1010px) {
+    .repo-filters-flex {
+        display: flex;
+        align-items: flex-start;
+    }
+    .repo-filter-inner-flex {
+        /* width: 90%; */
+        flex-shrink: 0;
+        margin-top: 0px;
+        margin-right: 20px;
+    }
+    input.filters {
+        width: 60%;
+        margin-right: 20px;
+    }
+    .btn-new {
+        order: 2;
+    }
+    /* .filters {
+        width: 20%;
+    } */
+    .repo-filter-inner-flex {
+        display: flex;
+        align-items: flex-start;
+    }
+}
+
+
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Repo Filter End &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Repo block Start &&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+.repo-desc-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 24px 0px;
+    border-top: 1px solid var(--repo-border);
+}
+
+.repo-desc-flex:last-child {
+    border-bottom: 1px solid var(--repo-border);
+}
+
+.repo-desc-block {
+    width: 70%;
+}
+
+.repo-name-flex {
+    display: flex;
+    align-items: center;
+    color: var(--primary-color);
+    margin-bottom: 12px;
+}
+
+.repo-stats-flex,
+.stat-flex {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.stat-flex {
+    margin-right: 16px;
+    margin-top: 12px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/*&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Repo block End &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&*/
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('/assets/fonts/Segoe\ UI.ttf') format('opentype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Segoe UI';
+    src: url('/assets/fonts/Segoe\ UI\ Bold.ttf') format('opentype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+font-display: swap;
+
 }
