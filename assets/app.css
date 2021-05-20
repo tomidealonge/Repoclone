@@ -205,7 +205,7 @@ main {
     width: 100%;
     background-color: var(--green-bg);
     color: white;
-    font-weight: 700px;
+    font-weight: 700;
 }
 
 .filters-btn-flex {
@@ -311,9 +311,10 @@ li.filter:last-child {
         margin-top: 0px;
         margin-right: 20px;
     }
-    .btn-new {
+    .repo-filters-flex>button {
         order: 2;
         width: 100px;
+        flex-grow: 0;
     }
 }
 
@@ -323,21 +324,13 @@ li.filter:last-child {
         align-items: flex-start;
     }
     .repo-filter-inner-flex {
-        /* width: 90%; */
         flex-shrink: 0;
         margin-top: 0px;
         margin-right: 20px;
     }
     input.filters {
-        width: 60%;
         margin-right: 20px;
     }
-    .btn-new {
-        order: 2;
-    }
-    /* .filters {
-        width: 20%;
-    } */
     .repo-filter-inner-flex {
         display: flex;
         align-items: flex-start;
