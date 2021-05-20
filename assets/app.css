@@ -19,7 +19,8 @@ body {
     --repo-border: #eaecef;
     --input-border: #e1e4e8;
     --input-text: #24292e;
-    --icon-bg: #6a737d
+    --icon-bg: #6a737d;
+    --nav-bottom-border: #d1d5da
 }
 
 
@@ -179,16 +180,70 @@ a {
     display: block
 }
 
+nav {
+    width: auto;
+    overflow-x: auto;
+    border-bottom: 1px solid var(--nav-bottom-border);
+    margin-bottom: 16px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+
+nav.desktop {
+    display: none;
+}
+
+nav>ul {
+    display: flex;
+}
+
+.inner-nav-item {
+    display: flex;
+    padding: 8px 16px;
+    border-bottom: 2px solid transparent;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.inner-nav-item:hover {
+    border-bottom: 2px solid var(--nav-bottom-border);
+}
+
+.inner-nav-item.active {
+    font-weight: 700;
+    border-bottom: 2px solid #f9826c;
+}
+
+.inner-nav-item.active:hover {
+    border-bottom: 2px solid #f9826c;
+}
+
 @media (min-width: 768px) {
     .container {
         display: flex
     }
+    nav.desktop {
+        display: flex;
+        align-items: flex-end;
+        padding: 10px 50px;
+        padding-bottom: 0px;
+    }
+    nav.mobile {
+        display: none;
+    }
 }
 
 section {
-    width: 90%;
-    margin: 0 auto;
-    max-width: 1440px;
+    width: 100%;
+    padding: 0px 16px;
+}
+
+@media (min-width: 768px) {
+    section {
+        width: 90%;
+        margin: 0 auto;
+        max-width: 1440px;
+    }
 }
 
 main {
@@ -208,9 +263,28 @@ aside {
     margin-bottom: 24px
 }
 
+.profile-image-small-wrapper {
+    display: flex;
+    align-items: center;
+    margin-right: 16vw;
+    padding-bottom: 10px;
+    opacity: 0;
+}
+
 .profile-img {
     width: 15vw;
     height: 15vw;
+    border-radius: 50%;
+    margin-right: 15px;
+    background-image: url(https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile-img.small {
+    width: 32px;
+    height: 32px;
     border-radius: 50%;
     margin-right: 15px;
     background-image: url(https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg);
@@ -280,10 +354,11 @@ aside {
     aside {
         margin-right: 16px;
         position: relative;
-        top: -100px
+        top: -50px
     }
     .profile-img-wrapper {
         display: block;
+        margin-bottom: 0px;
     }
     .profile-img {
         width: 30vw;
@@ -579,5 +654,3 @@ li.filter:last-child {
 }
 
 font-display: swap;
-
-}
