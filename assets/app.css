@@ -15,6 +15,7 @@ body {
     --header-bg: #24292e;
     --btn-bg: #fafbfc;
     --btn-border: #E6E6E7;
+    --btn-hover: #f3f4f6;
     --btn-shadow: #24292e;
     --body-text: #586069;
     --repo-border: #eaecef;
@@ -128,6 +129,10 @@ button {
     cursor: pointer;
 }
 
+button:hover {
+    background-color: var(--btn-hover);
+}
+
 .dropdown-caret {
     display: inline-block;
     width: 0;
@@ -140,6 +145,15 @@ button {
     border-right: 4px solid transparent;
     border-bottom: 0 solid transparent;
     border-left: 4px solid transparent;
+}
+
+.header-icon {
+    fill: white;
+    transition: .5s;
+}
+
+.header-icon:hover {
+    opacity: 0.8;
 }
 
 .dropdown-caret.inverted {
@@ -159,10 +173,18 @@ button.stars {
     width: 16px;
     height: 16px;
     margin: 0px 5px;
-    background-image: url(https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg);
+    fill: #6a737d;
     background-position: center;
     background-repeat: no-repeat;
     background-size: contain;
+}
+
+.icon-white {
+    fill: white
+}
+
+.icon.active {
+    fill: var(--btn-text)
 }
 
 .icon.dropdown-icon {
@@ -188,6 +210,7 @@ button.stars {
 
 .inner-nav {
     font-size: 14px;
+    display: flex;
     line-height: 20px;
     font-weight: 400;
 }
@@ -201,7 +224,7 @@ button.stars {
 footer {
     font-size: 12px;
     line-height: 18px;
-    font-weight: 500;
+    font-weight: 400;
 }
 
 a {
@@ -223,6 +246,7 @@ header {
     position: relative;
     padding: 16px;
     flex-wrap: wrap;
+    color: white;
 }
 
 .header-flex {
@@ -376,6 +400,7 @@ header {
     }
     .header-dropdown-wrapper {
         display: flex;
+        cursor: pointer;
     }
     .header-controls-flex>*+* {
         margin-right: 16px;
@@ -407,7 +432,7 @@ nav {
     margin-right: -16px;
 }
 
-nav.desktop {
+.desktop-nav {
     display: none;
 }
 
@@ -417,6 +442,7 @@ nav>ul {
 
 .inner-nav-item {
     display: flex;
+    align-items: center;
     padding: 8px 16px;
     border-bottom: 2px solid transparent;
     transition: 0.5s;
@@ -430,6 +456,7 @@ nav>ul {
 .inner-nav-item.active {
     font-weight: 500;
     border-bottom: 2px solid #f9826c;
+    color: var(--btn-text);
 }
 
 .inner-nav-item.active:hover {
@@ -441,13 +468,19 @@ nav>ul {
         display: flex
     }
     nav.desktop {
-        display: flex;
-        align-items: flex-end;
+        margin: 0 auto;
         padding: 10px 50px;
-        padding-bottom: 0px;
+        margin-bottom: 16px;
+        padding-bottom: 0px
+    }
+    .desktop-nav {
+        display: flex;
         margin-top: 24px;
-        margin-left: 0;
-        margin-right: 0;
+        align-items: flex-end;
+        padding-bottom: 0px;
+        max-width: 1247px;
+        margin-left: auto;
+        margin-right: auto;
     }
     nav.mobile {
         display: none;
@@ -486,9 +519,11 @@ aside {
 .profile-image-small-wrapper {
     display: flex;
     align-items: center;
-    margin-right: 16vw;
+    margin-right: 80px;
     padding-bottom: 10px;
     opacity: 0;
+    width: 30vw;
+    max-width: 280px;
 }
 
 .profile-img {
@@ -924,6 +959,16 @@ ul.footer {
     width: 10%;
     display: flex;
     justify-content: center;
+}
+
+.footer-logo-icon {
+    cursor: pointer;
+    transition: .5s;
+    fill: #d1d5da;
+}
+
+.footer-logo-icon:hover {
+    fill: var(--input-text);
 }
 
 @media (max-width: 1002px) {
