@@ -438,7 +438,7 @@ header {
     display: block
 }
 
-nav {
+nav.mobile {
     width: auto;
     overflow-x: auto;
     border-bottom: 1px solid var(--repo-border);
@@ -449,7 +449,12 @@ nav {
     margin-right: -16px;
     position: sticky;
     top: 0;
+    display: block;
     background-color: white;
+}
+
+nav.desktop {
+    display: none;
 }
 
 .desktop-nav {
@@ -496,7 +501,9 @@ nav>ul {
         z-index: 10;
         background-color: white;
         position: sticky;
-        top: 0
+        top: 0;
+        display: block;
+        border-bottom: 1px solid var(--repo-border);
     }
     .desktop-nav {
         display: flex;
@@ -611,7 +618,7 @@ aside {
     justify-content: start;
     font-weight: 400;
     font-size: 12px;
-    padding-right: 8px;
+    padding-left: 8px;
 }
 
 .flex-summary {

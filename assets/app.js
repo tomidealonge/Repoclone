@@ -117,7 +117,6 @@ fetch(baseUrl, {
     })
     .then((res) => res.json())
     .then(({ data }) => {
-        console.log(data)
         profileImg.forEach((img) => {
             img.style.backgroundImage = `url(${data.viewer.avatarUrl})`
         })
@@ -184,5 +183,4 @@ fetch(baseUrl, {
                     </div>`
         }).join('')
         repos.innerHTML = reposArray
-        console.log(repos)
     })
