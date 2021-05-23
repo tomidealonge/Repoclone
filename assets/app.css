@@ -85,7 +85,7 @@ h1 {
 
 h2 {
     font-size: 20px;
-    line-height: 30px;
+    line-height: 20px;
     font-weight: 500;
 }
 
@@ -257,7 +257,7 @@ header {
     align-items: center;
     background-color: var(--header-bg);
     position: relative;
-    padding: 16px;
+    padding: 13.5px 16px;
     flex-wrap: wrap;
     color: white;
 }
@@ -556,7 +556,7 @@ aside {
 .profile-image-small-wrapper {
     display: flex;
     align-items: center;
-    margin-right: 80px;
+    margin-right: 50px;
     padding-bottom: 10px;
     opacity: 0;
     width: 30vw;
@@ -696,7 +696,7 @@ aside {
     aside {
         margin-right: 32px;
         position: relative;
-        top: -50px
+        top: -73px
     }
     .profile-img-wrapper {
         display: block;
@@ -968,7 +968,7 @@ li.filter:last-child {
 
 .repo-name-flex {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     color: var(--primary-color);
     margin-bottom: 12px;
     cursor: pointer;
