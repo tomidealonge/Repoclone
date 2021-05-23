@@ -34,6 +34,10 @@ body {
     color: rgb(106, 115, 125)
 }
 
+.mb-12 {
+    margin-bottom: 12px
+}
+
 .smiley {
     color: rgb(106, 115, 125)
 }
@@ -92,7 +96,7 @@ p {
     font-weight: 400;
 }
 
-p>.small {
+p.small {
     font-size: 12px;
     line-height: 18px;
     font-weight: 400;
@@ -187,6 +191,10 @@ button.stars {
     fill: var(--btn-text)
 }
 
+.profile-status:hover>.icon.smiley: {
+    fill: var(--primary-color)
+}
+
 .icon.dropdown-icon {
     background-image: url('./images/drop-down-arrow.png');
     width: 12px;
@@ -255,6 +263,11 @@ header {
     width: 100%;
     font-weight: 500;
     height: 0px;
+    transition: all 500ms ease-in-out;
+}
+
+.header-flex.open {
+    height: auto;
 }
 
 .flex-input {
@@ -262,7 +275,6 @@ header {
     align-items: center;
     position: relative;
     margin-top: 16px;
-    max-width: 350px;
 }
 
 .search-icon {
@@ -300,7 +312,6 @@ header {
     color: white;
 }
 
-.mobile-only,
 .hamburger {
     display: block;
 }
@@ -338,6 +349,7 @@ header {
     font-size: 14px;
     text-overflow: ellipsis;
     white-space: nowrap;
+    transition: .5s;
 }
 
 .dropdown-item:hover {
@@ -348,10 +360,13 @@ header {
 .userhandle {
     padding: 8px 16px;
     font-size: 14px;
+    color: var(--body-text);
 }
 
-.header-handle {
+.header-handle,
+.handle-el {
     font-weight: 500;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
@@ -360,6 +375,7 @@ header {
         padding-left: 32px;
         padding-right: 32px;
         flex-wrap: nowrap;
+        margin-bottom: 24px;
     }
     .header-flex {
         display: flex;
@@ -388,6 +404,7 @@ header {
     .flex-input {
         margin-top: 0px;
         margin-right: 16px;
+        max-width: 350px;
     }
     .header-search {
         margin-bottom: 0px;
@@ -430,6 +447,9 @@ nav {
     padding-right: 16px;
     margin-left: -16px;
     margin-right: -16px;
+    position: sticky;
+    top: 0;
+    background-color: white;
 }
 
 .desktop-nav {
@@ -444,6 +464,7 @@ nav>ul {
     display: flex;
     align-items: center;
     padding: 8px 16px;
+    line-height: 30px;
     border-bottom: 2px solid transparent;
     transition: 0.5s;
     cursor: pointer;
@@ -471,11 +492,14 @@ nav>ul {
         margin: 0 auto;
         padding: 10px 50px;
         margin-bottom: 16px;
-        padding-bottom: 0px
+        padding-bottom: 0px;
+        z-index: 10;
+        background-color: white;
+        position: sticky;
+        top: 0
     }
     .desktop-nav {
         display: flex;
-        margin-top: 24px;
         align-items: flex-end;
         padding-bottom: 0px;
         max-width: 1247px;
@@ -535,6 +559,7 @@ aside {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    z-index: 13;
 }
 
 .profile-img.small {
@@ -546,6 +571,15 @@ aside {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+
+.language-used {
+    width: 12px;
+    height: 12px;
+    margin-right: 5px;
+    border-radius: 50%;
+    border: 1px solid rgba(27, 31, 35, 0.1);
+    background-color: black;
 }
 
 .profile-img.smallest {
@@ -598,11 +632,16 @@ aside {
     cursor: pointer;
     padding: 4px 8px;
     border-radius: 6px;
+    color: var(--body-text);
     border: 1px solid var(--repo-border);
 }
 
 .header-status:hover {
     color: var(--primary-color);
+}
+
+.header-status:hover>svg {
+    fill: var(--primary-color);
 }
 
 .btn-edit-profile {
@@ -659,6 +698,7 @@ aside {
     }
     .profile-name {
         padding: 16px 0px;
+        z-index: 5;
     }
     .btn-status {
         display: none;
@@ -694,8 +734,9 @@ aside {
     .profile-status:hover .status-txt {
         display: block;
     }
-    .profile-status:hover .smiley {
+    .profile-status:hover>svg {
         margin-right: 5px;
+        fill: var(--primary-color)
     }
     .organisation {
         display: block;
@@ -908,11 +949,21 @@ li.filter:last-child {
     width: 70%;
 }
 
+.repo-desc-block>p {
+    /* font-size: 12px; */
+}
+
 .repo-name-flex {
     display: flex;
     align-items: center;
     color: var(--primary-color);
     margin-bottom: 12px;
+    cursor: pointer;
+}
+
+.repo-name-flex>a:hover {
+    text-decoration: underline;
+    color: var(--primary-color);
 }
 
 .repo-stats-flex,
@@ -923,7 +974,6 @@ li.filter:last-child {
 
 .stat-flex {
     margin-right: 16px;
-    margin-top: 12px;
     justify-content: center;
     align-items: center;
 }
@@ -969,6 +1019,10 @@ ul.footer {
 
 .footer-logo-icon:hover {
     fill: var(--input-text);
+}
+
+.footer-item:hover {
+    text-decoration: underline;
 }
 
 @media (max-width: 1002px) {
