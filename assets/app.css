@@ -31,7 +31,12 @@ body {
 
 .mr-5 {
     margin-right: 5px;
-    color: rgb(106, 115, 125)
+    /* color: rgb(106, 115, 125) */
+}
+
+.-mr-6 {
+    margin-right: -6px;
+    /* color: rgb(106, 115, 125) */
 }
 
 .mb-12 {
@@ -544,7 +549,8 @@ aside {
 .profile-img-wrapper {
     display: flex;
     align-items: center;
-    margin-bottom: 24px
+    margin-bottom: 24px;
+    margin-top: 24px;
 }
 
 .profile-image-small-wrapper {

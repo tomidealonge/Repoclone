@@ -154,7 +154,7 @@ fetch(baseUrl, {
             return `<div class="repo-desc-flex">
                         <div class="repo-desc-block">
                             <div class="repo-name-flex">
-                                <a href="#"><h2>${repo.name}</h2></a>
+                                <a class="-mb-6" href="#"><h2>${repo.name}</h2></a>
                                 ${isPrivate}
                             </div>
                             ${description}
