@@ -17,7 +17,6 @@ screen.addEventListener('click', () => {
 
 
 // token
-
 const token = atob('Z2hwX3FLV0p6SWx1Z0xmYjlQNEtXeFYyQ2FMTktHcjM2UjRiemY5Ug==')
 
 const baseUrl = "https://api.github.com/graphql";
