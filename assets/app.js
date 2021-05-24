@@ -17,7 +17,7 @@ screen.addEventListener('click', () => {
 
 
 // token
-const encodedToken = btoa('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')
+// const encodedToken = btoa('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')
 const token = atob('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')
 
 const baseUrl = "https://api.github.com/graphql";
