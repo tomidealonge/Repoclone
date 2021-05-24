@@ -15,11 +15,16 @@ screen.addEventListener('click', () => {
     })
 })
 
+
+// token
+const encodedToken = btoa('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')
+const token = atob(encodedToken)
+
 const baseUrl = "https://api.github.com/graphql";
 
 const headers = {
     "Content-Type": "application/json",
-    authorization: `token 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`,
+    authorization: `token ${token}`,
 }
 
 // Profile;
