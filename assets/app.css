@@ -614,6 +614,7 @@ aside {
     width: 15vw;
     height: 15vw;
     border-radius: 50%;
+    flex-shrink: 0;
     margin-right: 15px;
     background-image: url(https://d3e54v103j8qbb.cloudfront.net/plugins/Basic/assets/placeholder.60f9b1840c.svg);
     background-position: center;
