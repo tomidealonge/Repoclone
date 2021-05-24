@@ -27,6 +27,7 @@ const profileImg = document.querySelectorAll('.profile-img')
 const handle = document.querySelectorAll('.handle-el')
 const name = document.querySelectorAll('.name')
 const repos = document.querySelector('#repos')
+const repoNumber = document.querySelectorAll('.repo-number')
 const image = document.querySelector('.profile-image-small-wrapper')
 
 const updatedSince = (date) => {
@@ -124,6 +125,7 @@ fetch(baseUrl, {
             handle.textContent = data.viewer.login
         })
         name.textContent = data.viewer.name
+        repoNumber.forEach((num) => num.textContent = data.viewer.repositories.nodes.length)
         const reposArray = data.viewer.repositories.nodes.map((repo) => {
             let flex = ''
             if (repo.flexCount > 0) {
