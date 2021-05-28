@@ -91,6 +91,10 @@ button:hover {
     background-color: var(--btn-hover);
 }
 
+label {
+    font-size: 12px;
+}
+
 
 /* utility classes */
 
@@ -1120,6 +1124,102 @@ ul.footer {
 }
 
 
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Form Page &&&&&&&&&&&&&&&&&&&&&&&&& */
+
+.form-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.profileForm {
+    padding: 40px;
+    background-color: #F6F8FA;
+    border-radius: 12px;
+}
+
+.login-logo {
+    margin: 0 auto;
+    width: 48px;
+    margin-bottom: 7px
+}
+
+.btn-signin {
+    width: 100%;
+    background-color: var(--green-bg);
+    color: white;
+    border: 1px solid var(--green-bg);
+}
+
+.form-block {
+    position: relative;
+    height: 40px;
+    margin: 25px 0;
+    border-radius: 6px;
+}
+
+.btn-signin:hover,
+.btn-signin:disabled {
+    background-color: white;
+    color: var(--green-bg);
+}
+
+.username-label {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 12px 10px;
+    background-color: white;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.input-username {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    background-color: transparent;
+    transition: all 0.2s;
+}
+
+input.input-username:focus {
+    background-color: white;
+}
+
+input.input-username:focus+label {
+    top: -18px;
+    left: 0px;
+    height: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+    border-radius: 5px;
+    background-color: var(--green-bg);
+    color: white;
+}
+
+input.input-username:valid+label {
+    top: -18px;
+    left: 0px;
+    height: 20px;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    margin: 0px 10px;
+    border-radius: 5px;
+    background-color: var(--green-bg);
+    color: white;
+}
+
+
 /* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Loader &&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
 
 .loader {
@@ -1132,6 +1232,13 @@ ul.footer {
     -webkit-animation: spin 2s linear infinite;
     /* Safari */
     animation: spin 2s linear infinite;
+}
+
+.loader.form {
+    width: 15px;
+    height: 15px;
+    margin: 5px auto;
+    border-top: 3px solid var(--green-bg);
 }
 
 @-webkit-keyframes spin {

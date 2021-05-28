@@ -67,64 +67,6 @@ window.addEventListener("scroll", (e) => {
     }
 });
 
-
-// github data
-const githubData = {
-    token: atob("Z2hwX2lITVNQNkFTbmRUdFNiaXlXT2pXWGE2b3U4Z1pEWjBFNXEyTA=="),
-    username: (JSON.parse(localStorage.getItem('username'))) || 'EBEN4REAL',
-    baseUrl: "https://api.github.com/graphql"
-}
-
-const headers = {
-    "Content-Type": "application/json",
-    authorization: `token ${githubData.token}`,
-}
-
-const body = {
-    "query": `
-        query { 
-  user(login: "${githubData.username}"){
-    avatarUrl,
-    bio,
-    following {
-      totalCount
-    },
-    followers{
-      totalCount
-    },
-    starredRepositories{
-    totalCount
-    },
-    status{
-      emojiHTML,
-      message
-    },
-    bio,
-    name,
-    login,
-    repositories(first: 20, orderBy: {field: UPDATED_AT, direction: DESC}, ownerAffiliations: OWNER){
-      nodes {
-		name,
-        url,
-        isPrivate,
-        updatedAt,
-        forkCount,
-        viewerHasStarred,
-        stargazerCount,
-        descriptionHTML,
-        description,
-        primaryLanguage {
-          name
-          color
-        }
-      },
-      totalCount
-    }
-  }
-}
-    `
-}
-
 const starButtonTemplate = () => {
     return `<button class="stars">
                         <!-- <div class="icon star"></div> -->
@@ -204,7 +146,6 @@ const updatedAt = (_repo) => {
             </div>`
 }
 
-
 const template = (_repo) => {
     return `
         <div class="repo-desc-flex">
@@ -226,19 +167,15 @@ const template = (_repo) => {
     `
 }
 
-fetch(githubData.baseUrl, {
-        method: "POST",
-        headers: headers,
-        body: JSON.stringify(body)
-    })
-    .then((res) => res.json())
-    .then(({ data }) => {
-        profileImg.forEach((img) => img.style.backgroundImage = `url(${data.user.avatarUrl})`)
-        handle.forEach((handle) => handle.textContent = data.user.login)
-        name.forEach((el) => el.textContent = data.user.name)
-        repoNumber.forEach((num) => num.textContent = data.user.repositories.nodes.length)
-        const reposArray = data.user.repositories.nodes.map((repo) => {
-            return template(repo)
-        }).join('')
-        repos.innerHTML = reposArray
-    })
+const renderData = (data) => {
+    profileImg.forEach((img) => img.style.backgroundImage = `url(${data.user.avatarUrl})`)
+    handle.forEach((handle) => handle.textContent = data.user.login)
+    name.forEach((el) => el.textContent = data.user.name)
+    repoNumber.forEach((num) => num.textContent = data.user.repositories.nodes.length)
+    const reposArray = data.user.repositories.nodes.map((repo) => {
+        return template(repo)
+    }).join('')
+    repos.innerHTML = reposArray
+}
+
+renderData(JSON.parse(localStorage.getItem('data')))
