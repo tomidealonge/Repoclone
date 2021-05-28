@@ -2,6 +2,25 @@
 const input = document.querySelector('.input-username')
 const btn = document.querySelector('.btn-signin')
 const form = document.querySelector('#profileForm')
+const wrapper = document.querySelector('.toast-wrapper')
+const toastButton = document.querySelector('.toast-action-button')
+
+
+
+const showToast = () => {
+    wrapper.classList.add('error')
+    setTimeout(() => {
+        closeToast()
+    }, 4000);
+}
+
+const closeToast = () => {
+    wrapper.classList.remove('error')
+}
+
+toastButton.addEventListener('click', () => {
+    closeToast()
+})
 
 // github data
 let username
@@ -76,7 +95,7 @@ const fetchProfile = () => {
                 input.value = ''
                 window.location.href = '/your-repository.html'
             } else {
-                console.log('Not found')
+                showToast()
             }
         })
 }

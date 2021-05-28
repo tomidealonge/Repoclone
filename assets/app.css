@@ -1259,6 +1259,56 @@ input.input-username:valid+label {
     }
 }
 
+
+/* &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& Toast &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& */
+
+.toast-wrapper {
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    padding: 15px 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    transition: all 0.5s ease-in-out;
+    transform: translateY(101%);
+}
+
+.toast-wrapper.error {
+    background-color: #FF0033;
+    transform: translateY(0)
+}
+
+.toast-info-flex {
+    margin-right: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.toast-icon {
+    min-width: 20px;
+    min-height: 20px;
+    margin-right: 10px;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-image: url('../assets/images/error.svg');
+}
+
+.toast-action-button {
+    background-color: white;
+    color: black;
+    font-size: 13px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+}
+
 @font-face {
     font-family: 'Segoe UI';
     src: url('/assets/fonts/segoeuil.ttf') format('opentype');
