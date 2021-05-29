@@ -220,6 +220,16 @@ button.stars {
     background-size: contain;
 }
 
+.icon.back-arrow {
+    background-image: url('./images/left-arrow.png');
+    fill: transparent;
+    transition: all 0.4s;
+}
+
+button:hover>.icon.back-arrow {
+    transform: translateX(-4px);
+}
+
 @media (min-width: 768px) {
     .icon.smiley {
         margin: 0
