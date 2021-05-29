@@ -21,6 +21,10 @@ const name = document.querySelectorAll('.name')
 const repos = document.querySelector('#repos')
 const repoNumber = document.querySelectorAll('.repo-number')
 const image = document.querySelector('.profile-image-small-wrapper')
+const following = document.querySelector('.following-number')
+const followers = document.querySelector('.followers-number')
+const stars = document.querySelector('.stars-number')
+const bio = document.querySelector('.bio')
 
 const updatedSince = (date) => {
     var secs = Math.floor((new Date() - date) / 1000);
@@ -171,7 +175,11 @@ const renderData = (data) => {
     profileImg.forEach((img) => img.style.backgroundImage = `url(${data.user.avatarUrl})`)
     handle.forEach((handle) => handle.textContent = data.user.login)
     name.forEach((el) => el.textContent = data.user.name)
+    following.textContent = data.user.following.totalCount
+    followers.textContent = data.user.followers.totalCount
+    stars.textContent = data.user.starredRepositories.totalCount
     repoNumber.forEach((num) => num.textContent = data.user.repositories.nodes.length)
+    bio.textContent = data.user.bio
     const reposArray = data.user.repositories.nodes.map((repo) => {
         return template(repo)
     }).join('')
