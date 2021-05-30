@@ -1,2 +1,2 @@
-# Getcards Frontend test
-URL - https://tomidetest.netlify.app
+# Buycoins Frontend test
+URL - https://tomide.netlify.app
